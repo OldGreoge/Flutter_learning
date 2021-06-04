@@ -20,14 +20,24 @@ class _material_learningState extends State<material_learning> {
 
         RefreshIndicator(child: ListView(
           children: <Widget>[
+            ConstrainedBox(
+              constraints: BoxConstraints.tightFor(width: 80,height: 80),
+              child: Container(
+                color: Colors.lightBlue,
+                child: Text('hELLO!'),)
+              // decoration: BoxDecoration(
+              //   color: Colors.blue,
+              //   border: Border.all(color: Colors.greenAccent,width: 1,style: BorderStyle.solid),
+              //   borderRadius: BorderRadius.all(Radius.circular(30))
+              // ),
+            ),
             Container(
-              width: 200,
-              height:200,
-              decoration: BoxDecoration(
-                color: Colors.blue,
-                border: Border.all(color: Colors.greenAccent,width: 1,style: BorderStyle.solid),
-                borderRadius: BorderRadius.all(Radius.circular(30))
-              ),),
+              padding: EdgeInsets.all(20.0),
+              child: DecoratedBox(
+                decoration: BoxDecoration(color: Colors.orange),
+                child: Text("Hello world!"),
+              ),
+            ),
             Container(
               width: 200,
               height: 100,

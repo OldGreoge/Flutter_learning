@@ -5,7 +5,7 @@ import 'package:flutter_app/statefull_group_page.dart';
 import 'material_app_learning.dart';
 import 'material_learning.dart';
 
-void main()=> runApp(mater());
+void main()=> runApp(material_learning());
 
 
 class MyApp extends StatelessWidget {
