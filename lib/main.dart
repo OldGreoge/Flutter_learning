@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/data_type.dart';
-import 'package:flutter_app/material_sty_widget.dart';
 import 'package:flutter_app/statefull_group_page.dart';
 
-void main()=> runApp(Statefulgroup());
+void main()=> runApp(MyApp());
 
 
 class MyApp extends StatelessWidget {
