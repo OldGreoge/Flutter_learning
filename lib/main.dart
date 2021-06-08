@@ -3,10 +3,11 @@ import 'package:flutter_app/data_type.dart';
 import 'package:flutter_app/material_sty_widget.dart';
 import 'package:flutter_app/statefull_group_page.dart';
 
+import 'gridview_learn.dart';
 import 'listview_learn.dart';
 import 'listviewapp.dart';
 
-void main()=> runApp(ListviewLearn());
+void main()=> runApp(GridViewDemoA());
 
 
 class MyApp extends StatelessWidget {
