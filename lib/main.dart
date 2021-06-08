@@ -7,7 +7,7 @@ import 'gridview_learn.dart';
 import 'listview_learn.dart';
 import 'listviewapp.dart';
 
-void main()=> runApp(GridViewDemoA());
+void main()=> runApp(GridViewDemo());
 
 
 class MyApp extends StatelessWidget {
