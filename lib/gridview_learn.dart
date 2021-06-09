@@ -8,9 +8,9 @@ class GridViewDemo extends StatelessWidget{
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Gridview A'),
+          title: Text('GridviewDemo'),
         ),
-        body: GridViewDemoB(),
+        body: GridViewDemoC(),
       ),
 
     );
@@ -117,4 +117,39 @@ class GridViewDemoB extends StatelessWidget {
           ),
         );
   }
+}
+
+class GridViewDemoC extends StatelessWidget{
+  @override
+  Widget build(BuildContext context) {
+    return GridView.custom(
+        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 3,
+          mainAxisSpacing: 10,
+          crossAxisSpacing: 10,
+          childAspectRatio: 3/4
+        ),
+        childrenDelegate: SliverChildBuilderDelegate((context,index){
+          return _getWidget(index);
+        }),
+      semanticChildCount: 100,
+    );
+  }
+
+  Widget _getWidget(int index) {
+    return Container(
+      height: 30,
+      alignment: Alignment.center,
+      color: Colors.pinkAccent,
+      child: Text(index.toString()),
+    );
+  }
+
+  // List<Widget> _getItem(){
+  //   List<Widget> list=[];
+  //   for(int i=0;i<100;i++){
+  //     list.add(_getWidget(i));
+  //   }
+  //   return list;
+  // }
 }
