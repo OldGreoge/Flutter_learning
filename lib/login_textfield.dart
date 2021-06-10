@@ -1,8 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-class login_textfield extends StatelessWidget{
+class login_textfield extends StatefulWidget {
 
+  @override
+  State<StatefulWidget> createState() => new _textfieldcreate();
+}
+
+// ignore: camel_case_types
+class _textfieldcreate extends State{
   @override
   Widget build(BuildContext context) {
     String _accountValue="";
@@ -24,31 +30,31 @@ class login_textfield extends StatelessWidget{
     return TextField(
       controller: _accountController,
       keyboardType: TextInputType.number,
-      inputFormatters: [WhitelistingTextInputFormatter(RegExp('[0-9]'))],
+      inputFormatters: [WhitelistingTextInputFormatter(RegExp('[0-9a-zA-Z@_]'))],
       decoration: InputDecoration(
-        fillColor: Colors.blue,
+        fillColor: Colors.white70,
         filled: true,
         enabledBorder: OutlineInputBorder(
-          borderSide: BorderSide(color: Colors.blueGrey),
-          borderRadius: BorderRadius.all(Radius.circular(100))
+            borderSide: BorderSide(color: Colors.blueGrey),
+            borderRadius: BorderRadius.all(Radius.circular(100))
         ),
         hintText: '手机/邮箱',
         focusedBorder: OutlineInputBorder(
-          borderSide: BorderSide(color: Colors.lightBlue),
-          borderRadius: BorderRadius.all(Radius.circular(100))
+            borderSide: BorderSide(color: Colors.lightBlue),
+            borderRadius: BorderRadius.all(Radius.circular(100))
         ),
         suffixIcon: _accountValue.isEmpty
-          ?null:IconButton(
+            ?null:IconButton(
             icon: Icon(Icons.clear),
-            color: Color(0xFFcccccc),
+            color: Colors.black,
             iconSize: 16,
             onPressed: (){
-                setState((){
-                  _accountValue='';
-                  checkSubmitEnable();
-                 });
+              setState((){
+                _accountValue='';
+                checkSubmitEnable();
+              });
             }
-          ),
+        ),
       ),
       textAlign: TextAlign.center,
       onChanged: (value){
@@ -59,7 +65,4 @@ class login_textfield extends StatelessWidget{
       },
     );
   }
-
-  void setState(Null Function() param0) {}
-
 }
