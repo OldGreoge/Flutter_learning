@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/coDemo.dart';
 import 'package:flutter_app/data_type.dart';
 import 'package:flutter_app/material_sty_widget.dart';
 import 'package:flutter_app/statefull_group_page.dart';
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       home:Scaffold(
         appBar: AppBar(title: Text('FlutterDemo'),),
-        body: paddingDemo(),
+        body: coDemo(),
       )
     );
   }
