@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/coDemo.dart';
 import 'package:flutter_app/data_type.dart';
 import 'package:flutter_app/material_sty_widget.dart';
 import 'package:flutter_app/statefull_group_page.dart';
 
-import 'columnRowDemo.dart';
 import 'gridview_learn.dart';
 import 'listview_learn.dart';
 import 'listviewapp.dart';
 import 'login.dart';
+import 'login_textfield.dart';
 import 'paddingDemo.dart';
 
 void main()=> runApp(MyApp());
@@ -19,7 +20,14 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       home:Scaffold(
         appBar: AppBar(title: Text('FlutterDemo'),),
-        body: columnDemo(),
+        body: Column(
+          children: <Widget>[
+            SizedBox(height: 100,),
+            loginLogo(),
+            SizedBox(height: 80,),
+            login_textfield(),
+          ],
+        ),
       )
     );
   }
