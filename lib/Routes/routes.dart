@@ -5,6 +5,7 @@ import 'package:flutter_app/pages/searchDetail.dart';
 import '../carddemo.dart';
 import '../main.dart';
 import '../statefulwidgetDemo.dart';
+import '../Login/login.dart';
 
 final routes = {
   '/sfwDemo': (context) => sfwDemo(),
@@ -13,6 +14,7 @@ final routes = {
   '/search': (context, {arguments}) => searchPage(arguments: arguments),
   '/main': (context) => MyApp(),
   '/searchdetail':(context,{arguments})=>searchDetailPage(arguments: arguments),
+  '/login':(context)=>loginPage(),
 };
 
 RouteFactory onGenerateRoute = (RouteSettings settings) {

@@ -3,6 +3,8 @@ import 'package:flutter_app/carddemo.dart';
 import 'package:flutter_app/statefulwidgetDemo.dart';
 import 'package:flutter_app/wrapDemo.dart';
 
+import 'Login/login.dart';
+
 class Tabs extends StatefulWidget {
   const Tabs({Key key}) : super(key: key);
 
@@ -12,7 +14,7 @@ class Tabs extends StatefulWidget {
 
 class _TabsState extends State<Tabs> {
   int _currentIndex=0;
-  List _pageList=[sfwDemo(),cardDemo(),cardAspectRatioDemo()];
+  List _pageList=[sfwDemo(),loginPage(),cardAspectRatioDemo()];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
