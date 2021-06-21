@@ -24,7 +24,7 @@ class _sfwDemoState extends State<sfwDemo> {
             ),
             SizedBox(height:20,),
             RaisedButton(
-              child: Text('按钮1'),
+              child: Text('增加次数！'),
               onPressed: (){
                 setState(() {
                   this.countNun++;
@@ -44,6 +44,12 @@ class _sfwDemoState extends State<sfwDemo> {
                 child: Text('命名路由跳转Search'),
                 onPressed: (){
                   Navigator.pushNamed(context, '/search',arguments: {"id":'这是命名路由传值的'});
+                }
+            ),
+            RaisedButton(
+                child: Text('appBarDemoPage'),
+                onPressed: (){
+                  Navigator.pushNamed(context, '/appbar');
                 }
             ),
         ]

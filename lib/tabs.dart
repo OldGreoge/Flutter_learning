@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/carddemo.dart';
+import 'package:flutter_app/pages/tabbarDemo.dart';
 import 'package:flutter_app/statefulwidgetDemo.dart';
 import 'package:flutter_app/wrapDemo.dart';
 
@@ -12,7 +13,7 @@ class Tabs extends StatefulWidget {
 
 class _TabsState extends State<Tabs> {
   int _currentIndex=0;
-  List _pageList=[sfwDemo(),cardDemo(),cardAspectRatioDemo()];
+  List _pageList=[sfwDemo(),cardDemo(),tabbarDemo()];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -47,6 +48,44 @@ class _TabsState extends State<Tabs> {
             title: Text('Catalog'),
           ),
         ],
+      ),
+      drawer: Drawer(
+        child: Column(
+          children: <Widget>[
+              Row(
+                children: <Widget>[
+                    Expanded(
+                        child: DrawerHeader(
+                                decoration: BoxDecoration(
+                                  color: Colors.yellow,
+                                ),
+                                child: Text('Hello!')
+                        ),
+                    )
+                ],
+              ),
+              ListTile(
+                leading: CircleAvatar(
+                  child: Icon(Icons.people),
+                ),
+                title: Text('我的'),
+              ),
+              Divider(),
+              ListTile(
+                leading: CircleAvatar(
+                  child: Icon(Icons.person),
+                ),
+                title: Text('用户'),
+              ),
+              Divider(),
+              ListTile(
+                leading: CircleAvatar(
+                  child: Icon(Icons.settings),
+                ),
+                title: Text('设置'),
+              ),
+          ],
+        ),
       ),
       // ],
       // ),
