@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app/pages/appbarDemo.dart';
 import 'package:flutter_app/pages/search.dart';
 import 'package:flutter_app/pages/searchDetail.dart';
 
@@ -14,7 +13,6 @@ final routes = {
   '/search': (context, {arguments}) => searchPage(arguments: arguments),
   '/main': (context) => MyApp(),
   '/searchdetail':(context,{arguments})=>searchDetailPage(arguments: arguments),
-  '/appbar':(context)=>appbarDemo(),
 };
 
 RouteFactory onGenerateRoute = (RouteSettings settings) {
