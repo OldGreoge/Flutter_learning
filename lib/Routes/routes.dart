@@ -1,4 +1,7 @@
+
+
 import 'package:flutter/material.dart';
+import 'package:flutter_app/pages/appbarDemo.dart';
 import 'package:flutter_app/pages/search.dart';
 import 'package:flutter_app/pages/searchDetail.dart';
 
@@ -8,6 +11,7 @@ import '../statefulwidgetDemo.dart';
 
 final routes = {
   '/sfwDemo': (context) => sfwDemo(),
+  '/appbar':(context)=>appbarDemo(),
   '/cardDemo': (context) => cardDemo(),
   '/cardAspectRatioDemo': (context) => cardAspectRatioDemo(),
   '/search': (context, {arguments}) => searchPage(arguments: arguments),

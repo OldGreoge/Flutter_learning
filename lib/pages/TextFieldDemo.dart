@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/plugin/ToastDemo.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 class TextFieldDemo extends StatefulWidget {
   const TextFieldDemo({Key key}) : super(key: key);
@@ -10,24 +12,22 @@ class TextFieldDemo extends StatefulWidget {
 class _TextFieldDemoState extends State<TextFieldDemo> {
 
   var username=TextEditingController();
+  var _flag;
 
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
     username.text='初始值';
+    _flag=true;
   }
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: Text('TextFieldDemoPage'),),
-      body: Padding(
+    return Padding(
         padding: EdgeInsets.all(20),
         child: Column(
           children: <Widget>[
-              TextField(),
-              SizedBox(),
               TextField(
                 controller: username,
                 decoration: InputDecoration(
@@ -39,16 +39,24 @@ class _TextFieldDemoState extends State<TextFieldDemo> {
               Container(
                 child: RaisedButton(
                   child: Text('登录'),
-                  onPressed: (){
-
-                  },
+                  onPressed:(){Toastd('登录');}
+                    // Fluttertoast.showToast(
+                    //     msg: "txt",
+                    //     toastLength: Toast.LENGTH_LONG,
+                    //     gravity: ToastGravity.CENTER,  // 消息框弹出的位置
+                    //     timeInSecForIosWeb: 1,  // 消息框持续的时间（目前的版本只有ios有效）
+                    //     backgroundColor: Colors.red,
+                    //     textColor: Colors.white,
+                    //     fontSize: 16.0
+                    // );
+                    ,
                   color: Colors.blue,
                   textColor: Colors.white,
                 ),
               ),
               SizedBox(height: 8,),
               TextField(
-                maxLines: 4,
+                maxLines: 3,
                 decoration: InputDecoration(
                   hintText: "多行文本框",
                   border: OutlineInputBorder(),
@@ -76,9 +84,31 @@ class _TextFieldDemoState extends State<TextFieldDemo> {
                   hintText: "请输入用户名",
                 ),
               ),
+              SizedBox(height: 8,),
+              Checkbox(
+                value: _flag,
+                onChanged: (v){
+                  setState(() {
+                    _flag=v;
+                  });
+                },
+                activeColor: Colors.red,
+              ),
+              Text(_flag?"选中":"未选中"),
+              Divider(),
+              CheckboxListTile(
+                value: _flag,
+                onChanged: (v){
+                  setState(() {
+                    _flag=v;
+                  });
+                },
+                title: Text('标题'),
+                subtitle: Text('二级标题'),
+                secondary: Icon(Icons.ac_unit),
+              )
           ],
         ),
-      ),
     );
   }
 }

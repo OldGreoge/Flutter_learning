@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/pages/FormDemo.dart';
+
+import 'RadioDemo.dart';
 
 class tabbarDemo extends StatefulWidget {
   const tabbarDemo({Key key}) : super(key: key);
@@ -28,16 +31,16 @@ class _tabbarDemoState extends State<tabbarDemo> with SingleTickerProviderStateM
         bottom: TabBar(
           controller: this._tabController,
           tabs: [
-            Tab(text: 'First',),
-            Tab(text: 'Second',)
+            Tab(text: 'Form',),
+            Tab(text: 'Radio',)
           ],
         ),
       ),
       body: TabBarView(
         controller: this._tabController,
         children: <Widget>[
-            Center(child: Text('FirstPage'),),
-            Center(child: Text('SecondPage'),),
+            Center(child: FormDemo(),),
+            Center(child: RadioDemo(),),
 
         ],
       ),
