@@ -1,3 +1,4 @@
+import 'package:date_format/date_format.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app/carddemo.dart';
 import 'package:flutter_app/pages/TextFieldDemo.dart';
@@ -20,7 +21,14 @@ class _TabsState extends State<Tabs> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('FlutterDemo'),),
+      appBar: AppBar(
+        title: Text('FlutterDemo'),
+        actions:[
+          IconButton(icon: Icon(Icons.access_alarm), onPressed: (){
+            Navigator.pushNamed(context, '/swiper');
+          }),
+        ],
+      ),
       body:this._pageList[this._currentIndex]
       // Column(
       //   children: <Widget>[

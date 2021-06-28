@@ -4,14 +4,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_app/pages/appbarDemo.dart';
 import 'package:flutter_app/pages/search.dart';
 import 'package:flutter_app/pages/searchDetail.dart';
+import 'package:flutter_app/pages/swiperDemo.dart';
 
 import '../carddemo.dart';
 import '../main.dart';
 import '../statefulwidgetDemo.dart';
 
 final routes = {
-  '/sfwDemo': (context) => sfwDemo(),
+  '/swiper':(context)=>SwiperDemo(),
   '/appbar':(context)=>appbarDemo(),
+  '/sfwDemo': (context) => sfwDemo(),
   '/cardDemo': (context) => cardDemo(),
   '/cardAspectRatioDemo': (context) => cardAspectRatioDemo(),
   '/search': (context, {arguments}) => searchPage(arguments: arguments),

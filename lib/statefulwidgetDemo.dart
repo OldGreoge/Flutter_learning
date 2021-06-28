@@ -40,7 +40,7 @@ class _sfwDemoState extends State<sfwDemo> {
                     MaterialPageRoute(builder: (context)=>searchPage(title:'Hello Search!'))
                   );
                 }),
-            RaisedButton(
+            ElevatedButton(
                 child: Text('命名路由跳转Search'),
                 onPressed: (){
                   Navigator.pushNamed(context, '/search',arguments: {"id":'这是命名路由传值的'});
